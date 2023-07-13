@@ -9,6 +9,8 @@ RUN apk --update --no-cache add --virtual native-deps \
   npm install --quiet node-gyp -g &&\
   apk del native-deps
 
+RUN apk add --no-cache bash git openssh
+
 RUN apk add --no-cache chromium \
   && rm -rf /var/cache/apk/* /tmp/*
 
